@@ -1,0 +1,45 @@
+//Application name
+    var app = angular.module("myTmoApppdl", []);
+
+    app.controller("myCtrl", function ($scope) {
+        //Sample login function
+        $scope.signin = function () {
+            var formData =
+                    {
+                        email: $scope.email,
+                        password: $scope.password
+                    };
+        console.log("Form data is:" + JSON.stringify(formData));
+    };
+});
+HTML file:
+
+<html>
+    <head>
+        <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body ng-app="myTmoApppdl" ng-controller="myCtrl">
+        <div class="container">
+            <div class="form-group">
+                <form class="form" role="form" method="post" ng-submit="signin()">
+                    <div class="form-group col-md-6">
+                        <label class="">Email address</label>
+                        <input type="email" class="form-control" ng-model="email" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" ng-model="password" placeholder="Password" required>
+                    </div>
+                </form>
+                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+            </div>
+        </div>
+    </body>
+
+    <script src="angular.min.js" type="text/javascript"></script>
+
+    <!--User defined JS files-->
+    <script src="app.js" type="text/javascript"></script>
+    <script src="jsonParsingService.js" type="text/javascript"></script>
+</html>
