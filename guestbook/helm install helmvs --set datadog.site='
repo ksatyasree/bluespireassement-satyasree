@@ -1,1 +1,0 @@
-helm install helmvs --set datadog.site='datadoghq.com' --set datadog.apiKey='a2e1fd1a4a1ff5748178976278ad496a' datadog/datadog 
